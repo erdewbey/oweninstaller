@@ -29,7 +29,7 @@
             "POSTGRE": "(i) PostgreSql Yükleniyor...",
             "SUCCESS_POSTGRE": "(✓) PostgreSql Yüklendi!",
             "AUTO_BOTLOG": "Bu grup otomatik olarak kurulum sonrası aşamasında @EpicUserBot ile oluşturulmuştur.",
-            "EPICUSERBOT": "✨ 𝚂𝚒𝚛𝚒 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 𝚂𝚎𝚝𝚞𝚙✨\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n`🎉 Kurulum başarıyla tamamlandı! .alive komutu ile botu test edin!\n\n🙃 .Epic komutu ile tüm komutlara bakabilir, bir sorunun olduğunda` **@hydradestek** `grubuna sorabilirsin.. `",
+            "EPICUSERBOT": "✨ Epic Userbot Setup ✨\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n`🎉 Kurulum başarıyla tamamlandı! .alive komutu ile botu test edin!\n\n🙃 .Epic komutu ile tüm komutlara bakabilir, bir sorunun olduğunda` **@hydradestek** `grubuna sorabilirsin.. `",
             "DONT_LEAVE": "**LÜTFEN BU GRUPTAN AYRILMAYINIZ!**",
             "AFTER_INSTALL": "Kurulum sonrasını başlatmak ister misiniz?",
             "BOTLOG": "BotLog Grubu Oluştur",
