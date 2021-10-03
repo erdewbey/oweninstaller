@@ -97,7 +97,7 @@ if __name__ == "__main__":
     onemli(LANG['GETTING_STRING_SESSION'])
     stri, aid, ahash = main()
     basarili(LANG['SUCCESS_STRING'])
-    SyperStringKey = "EpicUserBot"
+    
     baslangic = time()
 
 
@@ -107,19 +107,21 @@ if __name__ == "__main__":
     basarili(LANG['SUCCESS_APP'])
     onemli(LANG['DOWNLOADING'])
 
-    SyperStringKey = "EpicUserBot"
-    GiperStringKey = "erdembey0/"
-    InvalidKey = "http://github.com/" 
-    str1 = InvalidKey+GiperStringKey+SyperStringKey
+    #Noldu kardeşim kendi installerını yazamadınmı burdan sana ekmek çıkmaz / Copy pasterlara yer yok - Misaki
+    piclik = 'aHR0cHM6Ly9naXRodWIuY29tL0VyZGVtQmV5MC9FcGljVXNlckJvdA=='
+    annen = piclik.encode('ascii')
+    epic = base64.b64decode(annen)
+    misaki = epic.decode('ascii')
 
     if os.path.isdir("./EpicUserBot/"):
         rm_r("./EpicUserBot/")
-    repo = Repo.clone_from(str1,"./EpicUserBot/", branch="master")
+    repo = Repo.clone_from(misaki,"./EpicUserBot/", branch="master")
     onemli(LANG['DEPLOYING'])
     app = hgit(heroku, repo, appname)
     config = app.config()
 
     onemli(LANG['WRITING_CONFIG'])
+
 
     config['ANTI_SPAMBOT'] = 'False'
     config['ANTI_SPAMBOT_SHOUT'] = 'True'
