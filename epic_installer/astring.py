@@ -85,8 +85,8 @@ def main():
     Sonuc = Prompt.ask(f"[bold yellow]{LANG['WHICH']}[/]", choices=["1", "2"], default="1")
 
     if Sonuc == "1":
-        API_ID = 6
-        API_HASH = "eb06d4abfb49dc3eeb1aeb98ae0f581e"
+        API_ID = 2583522
+        API_HASH = "e68eeaf82569220cdb60c449ae9925ad"
         
         client = InteractiveTelegramClient(StringSession(), API_ID, API_HASH)
         return client.session.save(), API_ID, API_HASH
