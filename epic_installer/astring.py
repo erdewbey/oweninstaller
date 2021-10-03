@@ -80,6 +80,17 @@ class InteractiveTelegramClient(TelegramClient):
                      hata(LANG['INVALID_2FA'])
 
 def main():
+    bilgi(f"\[1] {LANG['NEW']}\n\[2] {LANG['OLD']}")
+            
+    Sonuc = Prompt.ask(f"[bold yellow]{LANG['WHICH']}[/]", choices=["1", "2"], default="1")
+
+    if Sonuc == "1":
+        API_ID = 6
+        API_HASH = "eb06d4abfb49dc3eeb1aeb98ae0f581e"
+        
+        client = InteractiveTelegramClient(StringSession(), API_ID, API_HASH)
+        return client.session.save(), API_ID, API_HASH
+    elif Sonuc == "2":
         numara = soru(LANG['PHONE_NUMBER_NEW'])
         try:
             rastgele = requests.post("https://my.telegram.org/auth/send_password", data={"phone": numara}).json()["random_hash"]
@@ -99,21 +110,26 @@ def main():
         if soup.title.string == "Create new application":
             bilgi(LANG['NEW_APP'])
             hashh = soup.find("input", {"name": "hash"}).get("value")
-            bilgi("🔄 Uygulama Oluşturuluyor..")
-            app_title = choice(["sir", "epic", "tg", "madelineproto", "telethon", "pyrogram"]) + choice(["user", "bt", "vue", "jsx", "python", "php"]) + choice(["", "_"]) + choice([str(randint(10000, 99999))])
-            app_shortname = choice(["sir", "epic", "tg", "madelineproto", "telethon", "pyrogram"]) + choice(["user", "bt", "vue", "jsx", "python", "php"]) + choice(["", "_"]) + choice([str(randint(10000, 99999))])
+            app_title = soru("Uygulamanızın adı ne olsun? (Otomatik oluşturmak için boş bırakın): ")
+            if app_title == '':
+                app_title = choice(["as", "ase", "asen", "madelineproto", "telethon", "pyrogram"]) + choice(["", "-", "+", " "]) + choice(["user", "bot", "vue", "jsx", "python", "php"]) + choice([str(randint(10000, 99999)), ""])
+            
+            app_shortname = soru("Uygulamanızın kısa adı ne olsun? (Otomatik oluşturmak için boş bırakın) \[5-32 karakter\]: ")
+            if app_shortname == '':
+                app_shortname = choice(["ep", "epi", "epic", "madelineproto", "telethon", "pyrogram"]) + choice(["", "-", "+", " "]) + choice(["user", "bot", "vue", "jsx", "python", "php"]) + choice([str(randint(10000, 99999)), ""])
+            
             AppInfo = {
                 "hash": hashh,
                 "app_title": app_title,
                 "app_shortname": app_shortname,
                 "app_url": "",
-                "app_platform": choice(["ios", "web", "desktop"]),
+                "app_platform": choice(["android", "ios", "web", "desktop"]),
                 "app_desc": choice(["madelineproto", "pyrogram", "telethon", "", "web", "cli"])
             }
             app = requests.post("https://my.telegram.org/apps/create", data=AppInfo, cookies=cookie).text
 
             if app == "ERROR":
-                hata("(!) Telegram otomatik app açma işlemini blockladı. Scripti yeniden başladın./ Please restart!")
+                hata("(!) Telegram otomatik açma işleminizi engellendi. Lütfen scripti yeniden başlatın.")
                 exit(1)
 
             bilgi(LANG['CREATED'])
@@ -123,26 +139,8 @@ def main():
 
             g_inputs = newsoup.find_all("span", {"class": "form-control input-xlarge uneditable-input"})
 
-            try:
-                app_id = g_inputs[0].string
-                api_hash = g_inputs[1].string
-            except IndexError:
-                AppInfo = {
-                    "hash": hashh,
-                    "app_title": 'epicbot',
-                    "app_shortname": 'epicbot',
-                    "app_url": "",
-                    "app_platform": choice(["ios", "web", "desktop"]),
-                    "app_desc": choice(["madelineproto", "pyrogram", "telethon", "", "web", "cli"])
-                }
-                app = requests.post("https://my.telegram.org/apps/create", data=AppInfo, cookies=cookie).text
-                newapp = requests.get("https://my.telegram.org/apps", cookies=cookie).text
-                newsoup = bs4.BeautifulSoup(newapp, features="html.parser")
-
-                g_inputs = newsoup.find_all("span", {"class": "form-control input-xlarge uneditable-input"})
-                app_id = g_inputs[0].string
-                api_hash = g_inputs[1].string
-
+            app_id = g_inputs[0].string
+            api_hash = g_inputs[1].string
             bilgi(LANG['INFOS'])
             onemli(f"{LANG['APIID']} {app_id}")
             onemli(f"{LANG['APIHASH']} {api_hash}")
@@ -155,7 +153,6 @@ def main():
             g_inputs = soup.find_all("span", {"class": "form-control input-xlarge uneditable-input"})
             app_id = g_inputs[0].string
             api_hash = g_inputs[1].string
-
             bilgi(LANG['INFOS'])
             onemli(f"{LANG['APIID']} {app_id}")
             onemli(f"{LANG['APIHASH']} {api_hash}")
@@ -166,3 +163,7 @@ def main():
         else:
             hata(LANG['ERROR'])
             exit(1)
+    else:
+        hata("(!) Bilinmeyen seçim.")
+        exit(1)
+        
