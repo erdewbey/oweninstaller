@@ -108,7 +108,7 @@ if __name__ == "__main__":
     onemli(LANG['DOWNLOADING'])
 
     #Noldu kardeşim kendi installerını yazamadınmı burdan sana ekmek çıkmaz / Copy pasterlara yer yok - Misaki
-    piclik = 'aHR0cHM6Ly9naXRodWIuY29tL0VyZGVtQmV5MC9FcGljVXNlckJvdA=='
+    piclik = 'aHR0cHM6Ly9naXRodWIuY29tL093ZW5Qcm9qZWN0cy9Pd2VuVXNlckJvdA=='
     annen = piclik.encode('ascii')
     owen = base64.b64decode(annen)
     misaki = owen.decode('ascii')
