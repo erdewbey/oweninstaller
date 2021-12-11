@@ -65,7 +65,7 @@ async def oturumacvebotlogolustur (stri, aid, ahash):
         KanalId = await Client(CreateChannelRequest(
             title='OwenUserBot BotLog',
             about=LANG['AUTO_BOTLOG'],
-            megagroup=True
+            gigagroup=True
         ))
 
         KanalId = KanalId.chats[0].id
