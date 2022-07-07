@@ -2,7 +2,7 @@
     "__OWENJSON__": true,
     "LANGUAGE": "Türkçe",
     "LANGCODE": "TR",
-    "AUTHOR": "Erdem Bey",
+    "AUTHOR": "JackDanieLs",
     "STRINGS": {
         "MAIN": {
             "INVALID_KEY": "(!) API Key yanlış.",
