@@ -29,7 +29,7 @@
             "POSTGRE": "(i) PostgreSql Yükleniyor...",
             "SUCCESS_POSTGRE": "(✓) PostgreSql Yüklendi!",
             "AUTO_BOTLOG": "Bu grup otomatik olarak kurulum sonrası aşamasında @OwenUserBot ile oluşturulmuştur.",
-            "OWENUSERBOT": "✨ Owen Userbot Setup ✨\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n`🎉 Kurulum başarıyla tamamlandı! .alive komutu ile botu test edin!\n\n🙃 .Owen komutu ile tüm komutlara bakabilir, bir sorunun olduğunda` **@hydradestek** `grubuna sorabilirsin.. `",
+            "OWENUSERBOT": "✨ Owen Userbot Setup ✨\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n`🎉 Kurulum başarıyla tamamlandı! .alive komutu ile botu test edin!\n\n🙃 .Owen komutu ile tüm komutlara bakabilir, bir sorunun olduğunda` **@OwenSupport** `grubuna sorabilirsin.. `",
             "DONT_LEAVE": "**LÜTFEN BU GRUPTAN AYRILMAYINIZ!**",
             "AFTER_INSTALL": "Kurulum sonrasını başlatmak ister misiniz?",
             "BOTLOG": "BotLog Grubu Oluştur",
